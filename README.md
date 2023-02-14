@@ -1,3 +1,3 @@
 # valentine.io
 
-I'm sorry, I have stolen images from FB :/
+I'm sorry, I have stolen images from FB :/, because nobody loves me anyway...
