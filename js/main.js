@@ -60,7 +60,17 @@
     gridContainer.appendChild(documentFragment)
     timer()
   }
-
+  /**
+ * @suppress {missingProperties|checkTypes}
+ */
+  function getData(){
+    const data = []
+    for(let i = 0; i<w.localStorage.length; i++){
+       data.push(w.localStorage.getItem(w.localStorage.key(i)))
+    }
+    data.sort((a, b)=> a.localeCompare(b))
+    return data
+  }
   d.addEventListener('click', (e) => {
     const target = e.target
     if (target.classList.contains('korta')) {
@@ -82,9 +92,9 @@
             if (gridContainer.getElementsByClassName('blur').length === shufleCards.length) {
               clearInterval(on)
               message.innerHTML = `<p>YOU WON!</p><p>your time: ${timers.textContent}</p>`
-              for(let i = 0; i<w.localStorage.length; i++){
-                message.innerHTML += `<p class="time">${w.localStorage.getItem(w.localStorage.key(i))}</p>`
-              }
+              const data = getData()
+              if(data.length)
+              message.innerHTML += 'Best score:' + data
               gridContainer.innerHTML = ''
               button('Play again')
               w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
@@ -122,6 +132,9 @@
   }
 
   function init () {
+    const data = getData()
+    if(data.length)
+    message.innerHTML += 'Best score:' + data
     button('Start')
   }
 
