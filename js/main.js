@@ -99,10 +99,10 @@
             gridContainer.style.pointerEvents = 'auto'
             if (gridContainer.getElementsByClassName('blur').length === shufleCards.length) {
               clearInterval(on)
-              message.innerHTML = `<p>Your time: ${timers.textContent}</p>`
+              message.innerHTML = `<h2>Your time: ${timers.textContent}</h2>`
               const data = getData()
               if(data.length)
-              message.innerHTML += 'Best score:' + data.join(', ')
+              message.innerHTML += '<h3>Best score:' + data.join(', ') + '</h3>'
               gridContainer.innerHTML = ''
               button('Play again')
               w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
@@ -142,7 +142,7 @@
   function init () {
     const data = getData()
     if(data.length)
-    message.innerHTML += 'Best score:' + data.join(', ')
+    message.innerHTML += '<h3>Best score:' + data.join(', ') + '</h3>'
     button('Start')
   }
 
