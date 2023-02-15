@@ -150,12 +150,12 @@ p {
 }
 
 #message,
-.time,
+#statistics,
 h1 {
     text-align: center
 }
 
-.time {
+#statistics {
     margin: 0;
     display: flex;
     place-content: space-between;

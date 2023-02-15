@@ -12,7 +12,9 @@
   // get container for messages showing
   const message = d.getElementById('message')
   // get game time element
-  const timers = d.getElementById('time')
+  const statistics = d.getElementById('statistics')
+  //get element of game time
+  const timers = d.getElementById('timers')
   // get clicks element
   const clicks = d.getElementById('clicks')
   // card object
@@ -156,12 +158,12 @@
    * @suppress {missingProperties|checkTypes}
    */
   function button(text) {
-    timers.classList.add('hidden')
+    statistics.classList.add('hidden')
     const btn = new Elements('button', 'btn', text)
     btn.onclick = () => {
       start()
       message.style.display = 'none'
-      timers.classList.remove('hidden')
+      statistics.classList.remove('hidden')
     }
     message.appendChild(btn)
   }
@@ -170,6 +172,7 @@
     // these lines should never be swapped, 
     // because shift changes length and first element should be shown first
     message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
+    if(card.data.length > 0)
     message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
   }
 
