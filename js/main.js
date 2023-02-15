@@ -99,7 +99,7 @@
             gridContainer.style.pointerEvents = 'auto'
             if (gridContainer.getElementsByClassName('blur').length === shufleCards.length) {
               clearInterval(on)
-              message.innerHTML = `<p>YOU WON!</p><p>your time: ${timers.textContent}</p>`
+              message.innerHTML = `<p>Your time: ${timers.textContent}</p>`
               const data = getData()
               if(data.length)
               message.innerHTML += 'Best score:' + data.join(', ')
