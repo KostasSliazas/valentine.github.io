@@ -101,8 +101,13 @@
               clearInterval(on)
               message.innerHTML = `<h2>Your time: ${timers.textContent}</h2>`
               const data = getData()
-              if(data.length)
-              message.innerHTML += '<h3>Best score:' + data.join(', ') + '</h3>'
+              
+              if(data.length){
+              // these lines should never be swapped, because shift changes length
+                message.innerHTML += '<h3>Best score:' + data.shift() + '</h3>'
+                message.innerHTML += '<h3>Other scores:' + data.join(', ') + '</h3>'
+              }
+              
               gridContainer.innerHTML = ''
               button('Play again')
               w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
@@ -136,13 +141,16 @@
       message.style.display = 'none'
       timers.classList.remove('hidden')
     }
-    message.prepend(btn)
+    message.appendChild(btn)
   }
 
   function init () {
     const data = getData()
-    if(data.length)
-    message.innerHTML += '<h3>Best score:' + data.join(', ') + '</h3>'
+    if(data.length) {
+    // these lines should never be swapped, because shift changes length
+    message.innerHTML += '<h3>Best score:' + data.shift() + '</h3>'
+    message.innerHTML += '<h3>Other scores:' + data.join(', ') + '</h3>'
+    }
     button('Start')
   }
 
