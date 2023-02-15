@@ -1,12 +1,19 @@
 ;
 (function (w,d) {
   'use strict'
+  // make array of letters
   const arr = ['a','b','c','d','e','f','g','j','k','l']
+  // shuffle letters array
   let shufleCards = getShuffledArr(arr.concat(arr))
+  // create document structure (fragment)
   const documentFragment = d.createDocumentFragment()
+  // get game cards main container
   const gridContainer = d.getElementsByClassName('grid-container')[0]
+  // get conatainer for messages showing
   const message = d.getElementsByClassName('message')[0]
+  // get game time element
   const timers = d.getElementsByClassName('time')[0]
+  // card object
   const card = {
     card: null,
     cards: 0
@@ -19,7 +26,8 @@
       [newArr[i], newArr[rand]] = [newArr[rand], newArr[i]]
     }
     return newArr
-  };
+  }
+  
   /**
  * @constructor Elements
  */
@@ -94,7 +102,7 @@
               message.innerHTML = `<p>YOU WON!</p><p>your time: ${timers.textContent}</p>`
               const data = getData()
               if(data.length)
-              message.innerHTML += 'Best score:' + data
+              message.innerHTML += 'Best score:' + data.join(', ')
               gridContainer.innerHTML = ''
               button('Play again')
               w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
@@ -134,7 +142,7 @@
   function init () {
     const data = getData()
     if(data.length)
-    message.innerHTML += 'Best score:' + data
+    message.innerHTML += 'Best score:' + data.join(', ')
     button('Start')
   }
 
