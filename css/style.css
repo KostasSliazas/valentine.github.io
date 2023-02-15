@@ -6,6 +6,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
+
 .wrp,
 body,
 html {
@@ -22,39 +23,40 @@ body {
     color: #6a6a88;
     font: 13px/1.3 Numbers, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+
 h1 {
-	font-size: 1.23em;
-	line-height: 1.06em;
-	padding-top: 0.0625em;
-	margin-bottom: 1.00em;
+    font-size: 1.23em;
+    line-height: 1.06em;
+    padding-top: 0.0625em;
+    margin-bottom: 1.00em;
 }
 
 h2 {
-	font-size: 1.23em;
-	line-height: 1.06em;
-	padding-top: 0.0625em;
-	margin-bottom: 1.00em;
+    font-size: 1.23em;
+    line-height: 1.06em;
+    padding-top: 0.0625em;
+    margin-bottom: 1.00em;
 }
 
 h3 {
-	font-size: 1.00em;
-	line-height: 1.31em;
-	padding-top: 0.154em;
-	margin-bottom: 1.15em;
+    font-size: 1.00em;
+    line-height: 1.31em;
+    padding-top: 0.154em;
+    margin-bottom: 1.15em;
 }
 
 h4 {
-	font-size: 1.00em;
-	line-height: 1.31em;
-	padding-top: 0.154em;
-	margin-bottom: 1.15em;
+    font-size: 1.00em;
+    line-height: 1.31em;
+    padding-top: 0.154em;
+    margin-bottom: 1.15em;
 }
 
 p {
-	font-size: 1.00em;
-	line-height: 1.31em;
-	padding-top: 0.154em;
-	margin-bottom: 1.15em;
+    font-size: 1.00em;
+    line-height: 1.31em;
+    padding-top: 0.154em;
+    margin-bottom: 1.15em;
 }
 
 .wrp {
@@ -63,7 +65,7 @@ p {
     max-width: 600px
 }
 
-.grid-container {
+#grid-container {
     display: grid;
     grid-template-columns: repeat(5, minmax(1em, 1fr));
     gap: .625em;
@@ -74,17 +76,17 @@ p {
     width: 100%
 }
 
-.grid-container .korta,
-.grid-container .wrpko {
+#grid-container .korta,
+#grid-container .wrpko {
     width: 100%;
     height: 100%
 }
 
-.grid-container .korta {
+#grid-container .korta {
     border-radius: 10px
 }
 
-.grid-container .wrpko {
+#grid-container .wrpko {
     cursor: pointer;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -97,13 +99,13 @@ p {
     transform: translate3d(0, 0, 0)
 }
 
-.grid-container .korta {
+#grid-container .korta {
     transition: transform .2s linear;
     text-align: center;
     transform-style: preserve-3d
 }
 
-.grid-container .galas {
+#grid-container .galas {
     transform: rotateY(180deg);
     background-color: #fafafa;
     background-repeat: no-repeat;
@@ -111,12 +113,12 @@ p {
     background-position: center;
 }
 
-.grid-container .priekis {
+#grid-container .priekis {
     background: repeating-linear-gradient(#e5e5e1 0, #e5e5e1 2px, #e8e8e4 2px, #e8e8e4 4px) fixed 0 0
 }
 
-.grid-container .galas,
-.grid-container .priekis {
+#grid-container .galas,
+#grid-container .priekis {
     display: flex;
     width: 100%;
     height: 100%;
@@ -133,31 +135,33 @@ p {
     overflow: hidden;
 }
 
-.grid-container .korta.pasukti {
+#grid-container .korta.pasukti {
     transform: rotateY(180deg);
     pointer-events: none
 }
 
-.grid-container .korta.pasukti1 {
+#grid-container .korta.pasukti1 {
     transform: rotateY(-180deg);
     pointer-events: none
 }
 
-.grid-container .korta.blur .galas {
+#grid-container .korta.blur .galas {
     opacity: .3
 }
 
-.message,
+#message,
 .time,
 h1 {
     text-align: center
 }
 
 .time {
-    margin:0;
+    margin: 0;
+    display: flex;
+    place-content: space-between;
 }
 
-.message {
+#message {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -177,7 +181,7 @@ h1 {
     max-height: 90%;
 }
 
-.message p {
+#message p {
     order: 1;
     padding: 0 1em
 }
@@ -218,20 +222,51 @@ h1 {
     margin: 0;
     font-size: 0;
 }
-.a {background-image: url(../img/01.png);}
-.b {background-image: url(../img/02.png);}
-.c {background-image: url(../img/03.png);}
-.d {background-image: url(../img/04.png);}
-.e {background-image: url(../img/05.png);}
-.f {background-image: url(../img/06.png);}
-.g {background-image: url(../img/07.png);}
-.j {background-image: url(../img/08.png);}
-.k {background-image: url(../img/09.png);}
-.l {background-image: url(../img/10.png);}
+
+.a {
+    background-image: url(../img/01.png);
+}
+
+.b {
+    background-image: url(../img/02.png);
+}
+
+.c {
+    background-image: url(../img/03.png);
+}
+
+.d {
+    background-image: url(../img/04.png);
+}
+
+.e {
+    background-image: url(../img/05.png);
+}
+
+.f {
+    background-image: url(../img/06.png);
+}
+
+.g {
+    background-image: url(../img/07.png);
+}
+
+.j {
+    background-image: url(../img/08.png);
+}
+
+.k {
+    background-image: url(../img/09.png);
+}
+
+.l {
+    background-image: url(../img/10.png);
+}
+
 @media only screen and (max-width:600px) {
 
-    .grid-container .galas,
-    .grid-container .priekis {
+    #grid-container .galas,
+    #grid-container .priekis {
         font-size: .75em
     }
 }

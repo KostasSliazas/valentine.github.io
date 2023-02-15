@@ -33,9 +33,9 @@
     <![endif]-->
   <div class="wrp">
     <h1>Memory Game</h1>
-    <div class="time hidden"><span id="minutes"></span>:<span id="seconds"></span></div>
-    <div class="grid-container samebg"></div>
-    <div class="message">
+    <div id="time" class="time hidden"><div>time: <span id="minutes"></span>:<span id="seconds"></span></div><div>moves: <span id="clicks"></span></div></div>
+    <div id="grid-container" class="samebg"></div>
+    <div id="message">
       <button class="hidden" id="install-button" type="button">Install</button>
       <p>This memory game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>. By playing you accepting to write scores to your localStorage (for self purposes only).</p>
     </div>
