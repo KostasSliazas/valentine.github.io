@@ -126,14 +126,17 @@
             if (gridContainer.getElementsByClassName('blur').length === shuffleCards.length) {
               clearInterval(on)
               message.innerHTML = `<h2>Your time: ${timers.textContent}</h2>`
+
+              // first set data only then get to show it
+              w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
+
               // set data array on constant variable, for later use
               card.data = getData()
               // show data if data length is more than 0
-              if (card.data.length) showData()
+              showData()
 
               gridContainer.innerHTML = ''
               button('Play again')
-              w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
               message.style.display = 'block'
             }
           }, 300)
@@ -171,16 +174,17 @@
   function showData() {
     // these lines should never be swapped, 
     // because shift changes length and first element should be shown first
+    if(card.data.length > 1) {
     message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
-    if(card.data.length > 0)
     message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
+    }
   }
 
   function init() {
     // set data array on constant variable, for later use
     card.data = getData()
     // show data if data length is more than 0
-    if (card.data.length) showData()
+    showData()
     // create the start button with text 'Start'
     button('Start')
     // initialize counters for click events on document load
