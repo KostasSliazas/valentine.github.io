@@ -78,6 +78,8 @@
     })
     gridContainer.appendChild(documentFragment)
     timer()
+    // show clicks (moves)
+    clicks.innerHTML = card.clicks
   }
 
 
@@ -138,6 +140,8 @@
               gridContainer.innerHTML = ''
               button('Play again')
               message.style.display = 'block'
+              // reset moves (clicks)
+              card.clicks = 0
             }
           }, 300)
         } else {
@@ -187,8 +191,7 @@
     showData()
     // create the start button with text 'Start'
     button('Start')
-    // initialize counters for click events on document load
-    clicks.innerHTML = card.clicks
+    // initialize counters for click events on document load    
   }
 
   // initialize game on event DOM creation
