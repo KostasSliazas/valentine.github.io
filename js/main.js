@@ -11,6 +11,8 @@
   const gridContainer = d.getElementById('grid-container')
   // get container for messages showing
   const message = d.getElementById('message')
+  // get notice element for messages showing (This game is using localStorage), later hide it
+  const notice = d.getElementById('notice')
   // get game time element
   const statistics = d.getElementById('statistics')
   //get element of game time
@@ -68,7 +70,10 @@
   function getData() {
     const data = []
     for (let i = 0; i < w.localStorage.length; i++) {
-      data.push(w.localStorage.getItem(w.localStorage.key(i)))
+      const key = w.localStorage.key(i)
+      if (key.includes('time'))
+        // console.log(`${key}: ${w.localStorage.getItem(key)}`)
+        data.push(w.localStorage.getItem(key))
     }
     data.sort((a, b) => a.localeCompare(b))
     return data
@@ -109,7 +114,7 @@
               message.innerHTML = `<h2>Your time: ${timers.textContent}</h2>`
 
               // first set data only then get to show it
-              w.localStorage.setItem(`time${w.localStorage.length + 1}`, timers.textContent)
+              w.localStorage.setItem(`time${w.localStorage.length}`, timers.textContent)
 
               // set data array on constant variable, for later use
               card.data = getData()
@@ -157,9 +162,9 @@
   function showData() {
     // these lines should never be swapped, 
     // because shift changes length and first element should be shown first
-    if(card.data.length > 1) {
-    message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
-    message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
+    if (card.data.length > 1) {
+      message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
+      message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
     }
   }
 
@@ -167,6 +172,10 @@
    * @suppress {missingProperties|checkTypes}
    */
   function start() {
+    // set localStorage item for visitor if not already game finished, 
+    // because we can check time value length, but in case game unfinished we set visitor
+    w.localStorage.setItem('visitor', 1)
+
     shuffleCards = getShuffledArr(arr.concat(arr))
     shuffleCards.forEach(e => {
       const ele = new Elements('DIV', 'wrpko', '')
@@ -193,9 +202,11 @@
     showData()
     // create the start button with text 'Start'
     button('Start')
-    // initialize counters for click events on document load    
   }
 
   // initialize game on event DOM creation
   d.addEventListener('DOMContentLoaded', init)
+
+  // hide notice message (By playing you accepting to write scores to your localStorage)
+  if (w.localStorage.getItem('visitor') !== null) notice.className = 'hidden'
 })(window, document)

@@ -26,7 +26,7 @@ body {
 
 h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
 
-
+.hidden { display: none; }
 .wrp {
     margin: 0 auto;
     padding: .625em;
@@ -120,9 +120,9 @@ h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
 #message,
 #statistics,
 h1 {
-    text-align: center
+    padding: 0 1em;
+    text-align: center;
 }
-
 #statistics {
     margin: 0;
     display: flex;
@@ -133,24 +133,22 @@ h1 {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     min-height: 222px;
     background: #fafafa;
     margin: 0 auto;
     box-shadow: 0 0 10px #6e6e6e;
-    display: flex;
-    flex-direction: column;
     border-radius: 10px;
-    width: 100%;
-    max-width: 300px;
+    min-width: 222px;
     border: 10px solid #fff;
     overflow: scroll;
     word-wrap: break-word;
     max-height: 90%;
+    padding: 1em;
+    max-width: 400px;
 }
 
 #message p {
-    order: 1;
     padding: 0 1em
 }
 
@@ -186,7 +184,7 @@ h1 {
     visibility: hidden
 }
 
-h1 {
+.wrp>h1 {
     margin: 0;
     font-size: 0;
 }
