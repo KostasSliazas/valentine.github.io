@@ -14,8 +14,8 @@
             "type": "image/png"
         }
     ],
-    "start_url": "https://kostassliazas.github.io/memory-game2.github.io/",
+    "start_url": "https://kostassliazas.github.io/valentine.github.io/",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "scope": "https://kostassliazas.github.io/memory-game2.github.io/"
+    "scope": "https://kostassliazas.github.io/valentine.github.io/"
 }
