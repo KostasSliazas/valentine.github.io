@@ -71,7 +71,7 @@
     const data = []
     for (let i = 0; i < w.localStorage.length; i++) {
       const key = w.localStorage.key(i)
-      if (key.includes('time'))
+      if (key.includes('time-K3IFj2sfmk'))
         // console.log(`${key}: ${w.localStorage.getItem(key)}`)
         data.push(w.localStorage.getItem(key))
     }
@@ -114,7 +114,7 @@
               message.innerHTML = `<h2>Your time: ${timers.textContent}</h2>`
 
               // first set data only then get to show it
-              w.localStorage.setItem(`time${w.localStorage.length}`, timers.textContent)
+              w.localStorage.setItem(`time-K3IFj2sfmk${w.localStorage.length}`, timers.textContent)
 
               // set data array on constant variable, for later use
               card.data = getData()
@@ -174,7 +174,7 @@
   function start() {
     // set localStorage item for visitor if not already game finished, 
     // because we can check time value length, but in case game unfinished we set visitor
-    w.localStorage.setItem('visitor', 1)
+    w.localStorage.setItem('visitor-K3IFj2sfmk', 1)
 
     shuffleCards = getShuffledArr(arr.concat(arr))
     shuffleCards.forEach(e => {
@@ -208,5 +208,5 @@
   d.addEventListener('DOMContentLoaded', init)
 
   // hide notice message (By playing you accepting to write scores to your localStorage)
-  if (w.localStorage.getItem('visitor') !== null) notice.className = 'hidden'
+  if (w.localStorage.getItem('visitor-K3IFj2sfmk') !== null) notice.className = 'hidden'
 })(window, document)
