@@ -208,5 +208,6 @@
   d.addEventListener('DOMContentLoaded', init)
 
   // hide notice message (By playing you accepting to write scores to your localStorage)
-  if (w.localStorage.getItem('visitor-'+gameId) !== null) notice.className = 'hidden'
+  // first set the hidden on HTML to not show (then show and hide again and never show again)
+  notice.className = w.localStorage.getItem('visitor-'+gameId) === null ? '' : 'hidden'
 })(window, document)
