@@ -141,7 +141,8 @@ h1 {
     border-radius: 10px;
     min-width: 222px;
     border: 10px solid #fff;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
     word-wrap: break-word;
     max-height: 90%;
     padding: 1em;
