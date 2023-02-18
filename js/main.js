@@ -162,10 +162,12 @@
   function showData() {
     // these lines should never be swapped, 
     // because shift changes length and first element should be shown first
-    if (card.data.length > 1) {
+    if (card.data.length)
       message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
+      // length is changed need to check is greater than zero or in other words not 0
+    if (card.data.length>0)  
       message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
-    }
+    
   }
 
   /**
