@@ -79,6 +79,7 @@ h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    image-rendering: optimizespeed;
 }
 
 #grid-container .priekis {
