@@ -160,21 +160,21 @@
   }
 
   function showData() {
-    // these lines should never be swapped, 
+    // these lines should never be swapped,
     // because shift changes length and first element should be shown first
     if (card.data.length)
       message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
       // length is changed need to check is greater than zero or in other words not 0
-    if (card.data.length>0)  
+    if (card.data.length>0)
       message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
-    
+
   }
 
   /**
    * @suppress {missingProperties|checkTypes}
    */
   function start() {
-    // set localStorage item for visitor if not already game finished, 
+    // set localStorage item for visitor if not already game finished,
     // because we can check time value length, but in case game unfinished we set visitor
     w.localStorage.setItem('visitor-'+gameId, 1)
 
@@ -197,6 +197,31 @@
     clicks.innerHTML = card.clicks
   }
 
+let counter = 0
+let len = 0
+function preload(...args) {
+  len = args.length
+  for (let i = 0; i < len; i++) {
+    const image = new Image();
+    image.src = args[i];
+    if(image.complete)
+     incrementCounter();
+    else
+     image.onLoad = incrementCounter();
+  }
+}
+preload("img/01.png", "img/02.png", "img/03.png", "img/04.png", "img/05.png", "img/06.png", "img/07.png", "img/08.png", "img/09.png", "img/10.png");
+
+
+      function incrementCounter() {
+          counter++;
+          if ( counter === len ) {
+              // console.log( 'All images loaded!' );
+              d.addEventListener('DOMContentLoaded', init)
+          }
+      }
+
+
   function init() {
     // set data for later use
     card.data = getData()
@@ -207,7 +232,7 @@
   }
 
   // initialize game on event DOM creation
-  d.addEventListener('DOMContentLoaded', init)
+  // d.addEventListener('DOMContentLoaded', init)
 
   // hide notice message (By playing you accepting to write scores to your localStorage)
   // first set the hidden on HTML to not show (then show and hide again and never show again if visitor is set)

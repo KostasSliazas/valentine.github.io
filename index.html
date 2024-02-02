@@ -21,33 +21,19 @@
   <!--[if lt IE 9]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://vivaldi.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="hidden">
-      <script>
-        <!--//--><![CDATA[//><!--
-          var images = new Array()
-          function preload() {
-            for (i = 0; i < preload.arguments.length; i++) {
-              images[i] = new Image()
-              images[i].src = preload.arguments[i]
-            }
-          }
-          preload("img/01.png","img/02.png","img/03.png","img/04.png","img/05.png","img/06.png","img/07.png","img/08.png","img/09.png","img/10.png")
-        //--><!]]>
-      </script>
-    </div>
   <div class="wrp">
     <h1>Memory Game</h1>
     <div id="statistics" class="hidden">
-      <div>time: <span id="timers"><span id="minutes"></span>:<span id="seconds"></span></span></div>
-      <div>moves: <span id="clicks"></span></div>
+      <div>Time: <span id="timers"><span id="minutes"></span>:<span id="seconds"></span></span></div>
+      <div>Moves: <span id="clicks"></span></div>
     </div>
     <div id="grid-container" class="samebg"></div>
     <div id="message">
       <button class="hidden" id="install-button" type="button">Install</button>
-      <h1>Memory game</h1>
+      <h2>Memory Game</h2>
       <p>:::::::Kittens:::::::</p>
-      <p id="notice" class="hidden">This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage"
-          target="_blank" rel="noopener noreferrer">localStorage</a>. By playing you accepting to write scores to your
+      <p id="notice" class="hidden">This game uses <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage"
+          target="_blank" rel="noopener noreferrer">localStorage</a>. By playing, you accept writing scores to your
         localStorage (for self purposes only).</p>
     </div>
   </div>
