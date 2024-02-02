@@ -196,7 +196,7 @@
     // show clicks (moves)
     clicks.innerHTML = card.clicks
   }
-
+const bod = document.body
 let counter = 0
 let len = 0
 function preload(...args) {
@@ -204,6 +204,7 @@ function preload(...args) {
   for (let i = 0; i < len; i++) {
     const image = new Image();
     image.src = args[i];
+    bod.appendChild(image)
     if(image.complete)
      incrementCounter();
     else
