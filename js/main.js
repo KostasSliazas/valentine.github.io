@@ -207,13 +207,12 @@
     len = args.length
     for (let i = 0; i < len; i++) {
       const image = new Image
-if(image.complete) incrementCounter()
-      image.onload = incrementCounter;
-            image.src = args[i];
-      // bod.appendChild(image)
+      if(image.complete) incrementCounter()
+      else image.onload = incrementCounter;
+      image.src = 'img/' + String(args[i]).padStart(2, '0') + '.png';
     }
   }
-  preload("img/01.png", "img/02.png", "img/03.png", "img/04.png", "img/05.png", "img/06.png", "img/07.png", "img/08.png", "img/09.png", "img/10.png");
+  preload(arr);
 
 
   function incrementCounter() {
