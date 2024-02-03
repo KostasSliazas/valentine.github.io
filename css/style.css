@@ -196,7 +196,9 @@ h1 {
     position: relative;
     top: 1px
 }
-
+.btn~.loader{
+    display: none;
+}
 .hidden {
     visibility: hidden
 }

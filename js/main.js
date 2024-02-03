@@ -156,7 +156,7 @@
       message.style.display = 'none'
       statistics.classList.remove('hidden')
     }
-    message.appendChild(btn)
+    message.prepend(btn)
   }
 
   function showData() {
