@@ -95,7 +95,9 @@ h3 {
 #grid-container .priekis {
 background-color: #BCBFEE;
 opacity: 1;
-background: radial-gradient(circle, transparent 20%, #BCBFEE 20%, #BCBFEE 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #BCBFEE 20%, #BCBFEE 80%, transparent 80%, transparent) 15px 15px, linear-gradient(#F8F9FF 1.2000000000000002px, transparent 1.2000000000000002px) 0 -0.6000000000000001px, linear-gradient(90deg, #F8F9FF 1.2000000000000002px, #BCBFEE 1.2000000000000002px) -0.6000000000000001px 0;
+background: radial-gradient(circle, transparent 10%, #BCBFEE 20%, #BCBFEE 80%, transparent 80%, transparent),
+radial-gradient(circle, transparent 2%, #BCBFEE 20%, #BCBFEE 80%, transparent 80%, transparent) 15px 15px,
+linear-gradient(#F8F9FF 1px, transparent 1px) 0 -1px, linear-gradient(90deg, #F8F9FF 1px, #BCBFEE 1px) -1px 0;
 background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
 }
 
