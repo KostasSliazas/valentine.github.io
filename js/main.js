@@ -199,7 +199,7 @@
     // show clicks (moves)
     clicks.innerHTML = card.clicks
   }
-  // const bod = document.body
+  const bod = document.body
   let counter = 0
   let len = 0
 
@@ -207,9 +207,10 @@
     len = args.length
     for (let i = 0; i < len; i++) {
       const image = document.createElement('img')
-      image.src = args[i];
-      // bod.appendChild(image)
-      image.onload = () => {incrementCounter()};
+
+      bod.appendChild(image)
+      image.addEventListener('load', incrementCounter);
+            image.src = args[i];
     }
   }
   preload("img/01.png", "img/02.png", "img/03.png", "img/04.png", "img/05.png", "img/06.png", "img/07.png", "img/08.png", "img/09.png", "img/10.png");
