@@ -203,7 +203,7 @@
   let counter = 0
   let len = 0
 
-   function preload(...args) {
+   function preload(args) {
     len = args.length
     for (let i = 0; i < len; i++) {
       const image = new Image
