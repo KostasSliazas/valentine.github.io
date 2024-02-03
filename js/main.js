@@ -208,7 +208,7 @@
     for (let i = 0; i < len; i++) {
       const image = new Image
       if(image.complete) incrementCounter()
-      else image.onload = incrementCounter;
+      else image.onload = incrementCounter
       image.src = 'img/' + String(args[i]).padStart(2, '0') + '.png';
     }
   }
@@ -219,7 +219,7 @@
     counter++;
     if (counter === len) {
       // All images loaded!
-      d.addEventListener('DOMContentLoaded', init)
+      window.onload = init
     }
   }
 
