@@ -15,18 +15,28 @@ html {
 }
 
 html {
-    background: #f7f7ff
+    background-image: radial-gradient(#393D8F 7%, transparent 7%),radial-gradient(#BCBFEE,#777BC9);
+    background-size: 7px 7px, 100%;
 }
 
 body {
     margin: 0;
-    color: #6a6a88;
+    color: #393D8F;
     font: 87.5%/1.5 Numbers, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    font-size: 1em;
+    margin-bottom: 0;
+}
 
-.hidden { display: none; }
+.hidden {
+    display: none;
+}
+
 .wrp {
     margin: 0 auto;
     padding: .625em;
@@ -75,7 +85,7 @@ h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
 
 #grid-container .galas {
     transform: rotateY(180deg);
-    background-color: #fafafa;
+    background-color: #F8F9FF;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -83,7 +93,10 @@ h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
 }
 
 #grid-container .priekis {
-    background: repeating-linear-gradient(#e5e5e1 0, #e5e5e1 2px, #e8e8e4 2px, #e8e8e4 4px) fixed 0 0
+background-color: #BCBFEE;
+opacity: 1;
+background: radial-gradient(circle, transparent 20%, #BCBFEE 20%, #BCBFEE 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #BCBFEE 20%, #BCBFEE 80%, transparent 80%, transparent) 15px 15px, linear-gradient(#F8F9FF 1.2000000000000002px, transparent 1.2000000000000002px) 0 -0.6000000000000001px, linear-gradient(90deg, #F8F9FF 1.2000000000000002px, #BCBFEE 1.2000000000000002px) -0.6000000000000001px 0;
+background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
 }
 
 #grid-container .galas,
@@ -99,7 +112,7 @@ h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0 0 2px #303074;
+    box-shadow: 0 0 2px #393D8F;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -114,7 +127,7 @@ h1, h2, h3 { margin-top:0; font-size:1em; margin-bottom:0;}
     pointer-events: none
 }
 
-#grid-container .korta.blur .galas {
+#grid-container .korta.blur .galas img {
     opacity: .3
 }
 
@@ -124,17 +137,19 @@ h1 {
     padding: 0 1em;
     text-align: center;
 }
+
 #statistics {
     margin: 0;
     display: flex;
     place-content: space-between;
+    color: #F8F9FF
 }
 
 #message {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     min-height: 222px;
     background: #fafafa;
     margin: 0 auto;
@@ -191,44 +206,10 @@ h1 {
     font-size: 0;
 }
 
-.a {
-    background-image: url(../img/01.png);
-}
-
-.b {
-    background-image: url(../img/02.png);
-}
-
-.c {
-    background-image: url(../img/03.png);
-}
-
-.d {
-    background-image: url(../img/04.png);
-}
-
-.e {
-    background-image: url(../img/05.png);
-}
-
-.f {
-    background-image: url(../img/06.png);
-}
-
-.g {
-    background-image: url(../img/07.png);
-}
-
-.j {
-    background-image: url(../img/08.png);
-}
-
-.k {
-    background-image: url(../img/09.png);
-}
-
-.l {
-    background-image: url(../img/10.png);
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 @media only screen and (max-width:600px) {

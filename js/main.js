@@ -2,7 +2,7 @@
 (function (w, d) {
   'use strict'
   // make array of letters for image classNames (backgrounds)
-  const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'j', 'k', 'l']
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   // shuffle letters array
   let shuffleCards = getShuffledArr(arr.concat(arr))
   // create document structure (fragment)
@@ -73,7 +73,7 @@
     const data = []
     for (let i = 0; i < w.localStorage.length; i++) {
       const key = w.localStorage.key(i)
-      if (key.includes('time-'+ gameId)) data.push(w.localStorage.getItem(key))
+      if (key.includes('time-' + gameId)) data.push(w.localStorage.getItem(key))
     }
     data.sort((a, b) => a.localeCompare(b))
     return data
@@ -164,8 +164,8 @@
     // because shift changes length and first element should be shown first
     if (card.data.length)
       message.innerHTML += '<h3>Best score: ' + card.data.shift() + '</h3>'
-      // length is changed need to check is greater than zero or in other words not 0
-    if (card.data.length>0)
+    // length is changed need to check is greater than zero or in other words not 0
+    if (card.data.length > 0)
       message.innerHTML += '<h3>Other scores: ' + card.data.join(', ') + '</h3>'
 
   }
@@ -176,14 +176,17 @@
   function start() {
     // set localStorage item for visitor if not already game finished,
     // because we can check time value length, but in case game unfinished we set visitor
-    w.localStorage.setItem('visitor-'+gameId, 1)
+    w.localStorage.setItem('visitor-' + gameId, 1)
 
     shuffleCards = getShuffledArr(arr.concat(arr))
     shuffleCards.forEach(e => {
       const ele = new Elements('DIV', 'wrpko', '')
       const kor = new Elements('DIV', 'korta', '')
-      const gal = new Elements('DIV', 'galas ' + e, '')
+      const gal = new Elements('DIV', 'galas c' + e, '')
       const pri = new Elements('DIV', 'priekis', '')
+      const img = new Image()
+      img.src = "./img/" + String(e).padStart(2, '0') + ".png"
+      gal.appendChild(img)
       ele.appendChild(kor).appendChild(gal)
       kor.appendChild(pri)
       documentFragment.appendChild(ele)
@@ -196,31 +199,32 @@
     // show clicks (moves)
     clicks.innerHTML = card.clicks
   }
-const bod = document.body
-let counter = 0
-let len = 0
-function preload(...args) {
-  len = args.length
-  for (let i = 0; i < len; i++) {
-    const image = new Image();
-    image.src = args[i];
-    bod.appendChild(image)
-    if(image.complete)
-     incrementCounter();
-    else
-     image.onLoad = incrementCounter();
+  // const bod = document.body
+  let counter = 0
+  let len = 0
+
+  function preload(...args) {
+    len = args.length
+    for (let i = 0; i < len; i++) {
+      const image = new Image();
+      image.src = args[i];
+      // bod.appendChild(image)
+      if (image.complete)
+        incrementCounter();
+      else
+        image.onLoad = incrementCounter();
+    }
   }
-}
-preload("img/01.png", "img/02.png", "img/03.png", "img/04.png", "img/05.png", "img/06.png", "img/07.png", "img/08.png", "img/09.png", "img/10.png");
+  preload("img/01.png", "img/02.png", "img/03.png", "img/04.png", "img/05.png", "img/06.png", "img/07.png", "img/08.png", "img/09.png", "img/10.png");
 
 
-      function incrementCounter() {
-          counter++;
-          if ( counter === len ) {
-              // console.log( 'All images loaded!' );
-              d.addEventListener('DOMContentLoaded', init)
-          }
-      }
+  function incrementCounter() {
+    counter++;
+    if (counter === len) {
+      // All images loaded!
+      d.addEventListener('DOMContentLoaded', init)
+    }
+  }
 
 
   function init() {
@@ -237,5 +241,5 @@ preload("img/01.png", "img/02.png", "img/03.png", "img/04.png", "img/05.png", "i
 
   // hide notice message (By playing you accepting to write scores to your localStorage)
   // first set the hidden on HTML to not show (then show and hide again and never show again if visitor is set)
-  notice.className = w.localStorage.getItem('visitor-'+gameId) === null ? '' : 'hidden'
+  notice.className = w.localStorage.getItem('visitor-' + gameId) === null ? '' : 'hidden'
 })(window, document)
