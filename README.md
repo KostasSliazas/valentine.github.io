@@ -19,6 +19,8 @@ git clone https://github.com/KostasSliazas/valentine.github.io.git
 cd valentine.github.io
 open index.html # or just open it in your browser
 ```
+Images created by me can be found as vectors on Openclipart: [openclipart.org/artist/Keistutis](https://openclipart.org/artist/Keistutis)
+
 ---
 ## 📜 License
 This project is open source and available under the [MIT License](LICENSE).
