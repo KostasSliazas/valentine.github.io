@@ -213,7 +213,7 @@ h1 {
 img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 @media only screen and (max-width:600px) {
