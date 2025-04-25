@@ -21,7 +21,8 @@ open index.html # or just open it in your browser
 ```
 Images created by me can be found as vectors on Openclipart: [openclipart.org/artist/Keistutis](https://openclipart.org/artist/Keistutis)
 
----
+[Download package](https://dl.dropboxusercontent.com/s/fmmiyresjdhr7t8/SVG-MAX-by-Kostas-Sliazas.zip?dl=0)
+
 ## 📜 License
 This project is open source and available under the [MIT License](LICENSE).
 
